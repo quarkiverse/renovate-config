@@ -25,6 +25,10 @@
     {
       "matchPackagePrefixes": ["io.quarkus"],
       "enabled": false
+    },
+    {
+      "matchDatasources": ["custom.quarkus-lts"],
+      "enabled": true
     }
   ]
 }
