@@ -1,0 +1,30 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended"
+  ],
+  "customDatasources": {
+    "quarkus-lts": {
+      "defaultRegistryUrlTemplate": "https://registry.quarkus.io/client/platforms",
+      "transformTemplates": [
+        "{ \"releases\": platforms[0].streams[lts = true].releases[0].{ \"version\": version } }"
+      ]
+    }
+  },
+  "customManagers": [
+    {
+      "customType": "regex",
+      "fileMatch": ["pom\\.xml$"],
+      "matchStrings": ["<quarkus\\.version>(?<currentValue>[^<]+)</quarkus\\.version>"],
+      "depNameTemplate": "io.quarkus:quarkus-bom",
+      "datasourceTemplate": "custom.quarkus-lts",
+      "versioningTemplate": "maven"
+    }
+  ],
+  "packageRules": [
+    {
+      "matchPackagePrefixes": ["io.quarkus"],
+      "enabled": false
+    }
+  ]
+}
