@@ -2,7 +2,15 @@
 
 Shared [Renovate](https://docs.renovatebot.com/) configuration for [Quarkiverse](https://github.com/quarkiverse) repositories.
 
-Renovate automatically discovers this configuration from any repository under the `quarkiverse` organization — no `extends` clause is needed in individual repositories.
+Add the following to your repository's `renovate.json` to use this shared configuration:
+
+```json
+{
+  "extends": [
+    "github>quarkiverse/renovate-config"
+  ]
+}
+```
 
 ## What's Included
 
