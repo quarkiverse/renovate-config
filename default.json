@@ -16,7 +16,7 @@
       "customType": "regex",
       "fileMatch": ["pom\\.xml$"],
       "matchStrings": ["<quarkus\\.version>(?<currentValue>[^<]+)</quarkus\\.version>"],
-      "depNameTemplate": "io.quarkus:quarkus-bom",
+      "depNameTemplate": "quarkus-lts",
       "datasourceTemplate": "custom.quarkus-lts",
       "versioningTemplate": "maven"
     }
@@ -25,10 +25,6 @@
     {
       "matchPackagePrefixes": ["io.quarkus"],
       "enabled": false
-    },
-    {
-      "matchDatasources": ["custom.quarkus-lts"],
-      "enabled": true
     }
   ]
 }
